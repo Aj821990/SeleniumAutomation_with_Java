@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="HelloFresh">
+<suite name="HelloFresh" preserve-order="true">
+	<parameter name="reTry" value="0"/>
+	<parameter name="browser" value="chrome"/>
+	<parameter name="gridUrl" value="http://selenium__standalone-chrome:4444/wd/hub"/>
+	<parameter name="env" value=""/>
+	<parameter name="____" value="____"/>
+	
 	<listeners>
-		<listener class-name="com.hellofresh.utilities.Reporting" />
+		<listener class-name="framework.listener.Listener" />
 	</listeners>
-	<test name="HelloFresh Test">
+	
+	<test name="SmokeTest">
+		<groups>
+			<define name="regression">
+				<include name="regression"></include>
+			</define>
+		</groups>
 		<classes>
 			<class name="com.hellofresh.testCases.TC_Register_001" />
 			<class name="com.hellofresh.testCases.TC_Login_002" />
