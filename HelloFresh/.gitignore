@@ -1,1 +1,6 @@
-/target
+reports/
+.idea/
+logs/
+target/
+HelloFresh.iml
+.DS_Store
