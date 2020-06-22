@@ -1,6 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<profiles>
+		<profile>
+			<id>testNG</id>
+			<properties>
+				<maven.test.failure.ignore>true</maven.test.failure.ignore>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M4</version>
+						<configuration>
+							<suiteXmlFiles>
+								<file>testNG.xml</file>
+							</suiteXmlFiles>
 	<groupId>com.hellofresh.challenge</groupId>
 	<artifactId>web-test</artifactId>
 	<version>1.0-SNAPSHOT</version>
